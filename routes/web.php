@@ -15,9 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
  */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', [StudentAuthController::class, 'index'])->name('login');
 
 /*STUDENT PANEL START*/
 
