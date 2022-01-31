@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [StudentAuthController::class, 'index'])->name('login');
 
-/*STUDENT PANEL START*/
+/* start av studentpanelen */
 
 Route::get('login', [StudentAuthController::class, 'index'])->name('login');
 Route::post('post-login', [StudentAuthController::class, 'postLogin'])->name('login.post');
@@ -28,9 +28,9 @@ Route::get('logout', [StudentAuthController::class, 'logout'])->name('logout');
 Route::get('show-courses/{id}', [StudentController::class, 'showCourses']);
 Route::get('user-detail', [StudentController::class, 'showUserCourseStatus']);
 
-/*STUDENT PANEL STOP*/
+/* end */
 
-/* Auto-generated admin routes */
+
 Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->group(static function () {
     Route::prefix('admin')->namespace('App\Http\Controllers\Admin')->name('admin/')->group(function () {
         Route::prefix('admin-users')->name('admin-users/')->group(static function () {
@@ -46,7 +46,7 @@ Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->gro
     });
 });
 
-/* Auto-generated admin routes */
+
 Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->group(function () {
     Route::prefix('admin')->namespace('App\Http\Controllers\Admin')->name('admin/')->group(static function () {
         Route::get('/profile', 'ProfileController@editProfile')->name('edit-profile');
@@ -56,7 +56,7 @@ Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->gro
     });
 });
 
-/* Auto-generated admin routes */
+
 Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->group(function () {
     Route::prefix('admin')->namespace('App\Http\Controllers\Admin')->name('admin/')->group(static function () {
         Route::prefix('classes')->name('classes/')->group(static function () {
@@ -71,7 +71,7 @@ Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->gro
     });
 });
 
-/* Auto-generated admin routes */
+
 Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->group(function () {
     Route::prefix('admin')->namespace('App\Http\Controllers\Admin')->name('admin/')->group(static function () {
         Route::prefix('courses')->name('courses/')->group(static function () {
@@ -86,7 +86,7 @@ Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->gro
     });
 });
 
-/* Auto-generated admin routes */
+
 Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->group(function () {
     Route::prefix('admin')->namespace('App\Http\Controllers\Admin')->name('admin/')->group(static function () {
         Route::prefix('grades')->name('grades/')->group(static function () {
@@ -101,7 +101,7 @@ Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->gro
     });
 });
 
-/* Auto-generated admin routes */
+
 Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->group(function () {
     Route::prefix('admin')->namespace('App\Http\Controllers\Admin')->name('admin/')->group(static function () {
         Route::prefix('users')->name('users/')->group(static function () {
